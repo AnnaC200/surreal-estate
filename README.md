@@ -2,6 +2,8 @@
 
 The project is part of the Manchester Codes front-end module.  The brief is to create a property search engine similar to RightMove or Zoopla using React.
 
+Used Airbnb style guide 
+
 ## Concepts
 
 - Single Page Application (SPA)
