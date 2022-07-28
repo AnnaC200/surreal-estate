@@ -18,6 +18,7 @@ const App = () => {
           </Link>
           <Link to="/add-property">Add a Property</Link>
         </NavBar>
+
         <Switch>
           <Route exact path="/" component={Properties} />
           <Route exact path="/add-property" component={AddProperty} />

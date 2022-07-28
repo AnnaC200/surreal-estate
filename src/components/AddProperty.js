@@ -1,5 +1,8 @@
+/* eslint-disable no-console */
 import React, { useState } from "react";
+import axios from "axios";
 import "../styles/add-property.css";
+import Alert from "./Alert";
 
 const AddProperty = () => {
   const initalState = {
@@ -12,14 +15,32 @@ const AddProperty = () => {
       price: "",
       email: "",
     },
+    alert: {
+      message: "",
+      isSuccess: false,
+    },
   };
 
   const [fields, setFields] = useState(initalState.fields);
+  const [alert, setAlert] = useState(initalState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    setAlert({ message: "", isSuccess: false });
     // eslint-disable-next-line no-console
-    console.log(fields);
+    axios
+      // eslint-disable-next-line prettier/prettier
+      .post(`http://localhost:3000/api/v1/PropertyListing`, { ...fields })
+      .then((response) => {
+        // eslint-disable-next-line no-console
+        console.log(response);
+      })
+      .catch(() =>
+        setAlert({
+          message: "Server error. Please try again later",
+          isSuccess: false,
+        })
+      );
   };
 
   const handleFieldChange = (event) => {
@@ -30,6 +51,7 @@ const AddProperty = () => {
     <div className="add-property">
       <div>Add Property Page</div>;
       <form className="Form" onSubmit={handleAddProperty}>
+        <Alert message={alert.message} success={alert.isSuccess} />
         <label htmlFor="title">
           Title
           <input

@@ -1,0 +1,41 @@
+.property-card{ 
+    background-color: white; 
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+}
+
+.title{
+    background-color: rgba(76, 11, 78, 0.856);
+    color: white;
+    font-size: 20px;
+    padding: 1%;
+  }
+  
+.property-type{
+    padding: 1%;
+}
+
+.bathrooms{
+    padding: 1%;
+}
+
+.bedrooms{
+    padding: 1%;
+}
+
+.price{
+    padding: 1%;
+}
+
+.city{
+    padding: 1%;
+}
+
+.email{
+    padding: 1%;
+    background-color: rgba(181, 57, 185, 0.856);
+    font-weight: bold;
+}
